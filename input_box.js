@@ -5,8 +5,8 @@ var inputBox = new Object();
 
 inputBox.assignValues = function(process){
   for(d in params){
-    document.getElementById('s1_' +d+ '_input').value = Math.round(process.state_1.values[d]*100)/100;
-    document.getElementById('s2_' +d+ '_input').value = Math.round(process.state_2.values[d]*100)/100;
+    document.getElementById('s1_' +d+ '_input').value = +Number(process.state_1.values[d]).toFixed(4);
+    document.getElementById('s2_' +d+ '_input').value = +Number(process.state_2.values[d]).toFixed(4);
   }
 }
 
@@ -35,3 +35,4 @@ inputBox.events = function(process){
     graph.update();
   })
 }
+
